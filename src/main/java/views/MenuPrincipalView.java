@@ -83,8 +83,15 @@ public class MenuPrincipalView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButAddActionPerformed
-        NuevoVehiculo addView = new NuevoVehiculo();
-        addView.setVisible(true);
+        NuevoVehiculo ventana = new NuevoVehiculo();
+        ventana.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent e) {
+                
+               new MenuPrincipalView().setVisible(true);
+            }
+        });
+        ventana.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButAddActionPerformed
 
